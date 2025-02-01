@@ -10,10 +10,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-    // As per https://araxia.net/keyboards/nice-view-bodge/, move screen gpio spi interface to 101.
-    &nice_view_spi {
-        cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -72,4 +68,9 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
+};
+
+// As per https://araxia.net/keyboards/nice-view-bodge/, move screen gpio spi interface to 101.
+&nice_view_spi {
+    cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
 };
