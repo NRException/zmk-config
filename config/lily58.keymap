@@ -15,12 +15,8 @@
     cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
 };
 
-// Default ZMK configuration...
-&lt { // Layer Tap - https://zmk.dev/docs/keymaps/behaviors/layers#layer-tap
-    tapping-term-ms = <200>;
-};
-
 // Configure "timeless" homerow mods using macros https://github.com/urob/zmk-config/tree/main#timeless-homerow-mods
+// More docs can be found here https://github.com/urob/zmk-helpers
 #include "zmk-helpers/key-labels/lily58.h"
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5   // Left-hand keys.
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5   // Right-hand keys.
@@ -48,6 +44,7 @@ ZMK_HOLD_TAP(hmr,
     hold-trigger-on-release;
 )
 
+/* Configure layers... */
 ZMK_LAYER(default,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp EQUAL     &kp N1        &kp N2        &kp N3        &kp N4            &kp N5                                          &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &kp MINUS
