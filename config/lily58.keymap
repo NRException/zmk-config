@@ -44,6 +44,15 @@ ZMK_HOLD_TAP(hmr,
     hold-trigger-on-release;
 )
 
+/* Dual shift caps */
+ZMK_BEHAVIOR(ss_lshft, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sk LSHFT>, <&caps_word>;
+)
+ZMK_BEHAVIOR(ss_rshft, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sk RSHFT>, <&caps_word>;
+)
 /* Configure layers... */
 ZMK_LAYER(colemak,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                                      ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
@@ -53,7 +62,7 @@ ZMK_LAYER(colemak,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp LCTRL     &hml LGUI A   &hml LALT R   &hml LSHFT S  &hml LCTRL T      &kp G                                           &kp M         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI O   &kp APOS
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤                                      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp LSHFT     &kp Z         &kp X         &kp C         &kp D             &kp V     &ext_power EP_ON   &ext_power EP_OFF  &kp K         &kp H         &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
+          &ss_lshft     &kp Z         &kp X         &kp C         &kp D             &kp V     &ext_power EP_ON   &ext_power EP_OFF  &kp K         &kp H         &kp COMMA     &kp DOT       &kp FSLH      &ss_rshft
      // ╰───────────────────────────────────────────────────────┼─────────────┼─────────────┤                                      ├─────────────┼─────────────┼───────────────────────────────────────────────────────╯
                                                         &kp LALT      &kp LGUI      &kp ESC       &lt 1 SPACE   &lt 2 RET     &kp BSPC      &kp BSPC      &kp RGUI
      //                                                ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
