@@ -4,13 +4,18 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob #Add helper macros for HRM mappings...
+    - name: m165437
+      url-base: https://github.com/M165437 #Cool screens! 
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-helpers # As in line 6
+    - name: zmk-helpers 
       remote: urob
       revision: main
+    - name: nice-view-gem 
+      remote: m165437 
+      revision: main 
   self:
     path: config
